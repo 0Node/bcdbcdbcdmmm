@@ -4,6 +4,9 @@ pipeline {
             label 'linux'
             }
       }
+      environment{
+        AWS_DEFAULT_REGION="us-east-1"
+      }
       triggers{
         pollSCM '*/5 * * * *'
       }
