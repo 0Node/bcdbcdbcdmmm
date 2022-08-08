@@ -13,6 +13,7 @@ pipeline {
                 echo "Building.."
                 sh '''
                 aws --version
+                aws ec2 describe-instances
                 '''
             }
         }
