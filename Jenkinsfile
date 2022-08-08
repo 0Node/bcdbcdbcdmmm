@@ -1,8 +1,8 @@
 pipeline {
     agent { 
-        docker {
-            image "ubuntu"
-        }
+        node {
+            label 'linux-agent'
+            }
       }
       triggers{
         pollSCM '*/5 * * * *'
