@@ -13,11 +13,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building.."
+                withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
                 sh '''
                 aws --version
                 aws ec2 describe-instances
                 '''
+                }
             }
         }
         stage('Test') {
